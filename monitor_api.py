@@ -46,25 +46,26 @@ print('Cases per one million: ' + str(f'{casesPerOneMillion:,}'))
 #                print(k.title() + ': ' + str(f'{v:,}'))
 #
 
-url_all = 'https://coronavirus-19-api.herokuapp.com/all'
-url_countries = 'https://coronavirus-19-api.herokuapp.com/countries'
 
-countries_data = requests.get(url_countries)
-countries_json = countries_data.json()
 
 #print stuff
 if print_all_country == 'yes':
+        url_all = 'https://coronavirus-19-api.herokuapp.com/all'
+        url_countries = 'https://coronavirus-19-api.herokuapp.com/countries'
+
+        countries_data = requests.get(url_countries)
+        countries_json = countries_data.json()
         #World stats
         url_all = 'https://coronavirus-19-api.herokuapp.com/all'
         all_data = requests.get(url_all)
         all_data_json = all_data.json()
-        
+
         w_cases = all_data_json['cases']
         w_deaths = all_data_json['deaths']
         w_recovered = all_data_json['recovered']
         w_fatality_rate = (w_deaths/w_cases)*100
         w_r_fatality_rate = round(w_fatality_rate, 2)
-        
+
         print('*'*8)
         print('*'*8)
         print('World Stats\n')
