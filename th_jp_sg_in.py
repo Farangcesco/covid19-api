@@ -1,7 +1,6 @@
 import requests
 
-#Look up specific country
-
+#Look up specific countries
 country = ['Thailand', 'Japan', 'Singapore', 'Indonesia']
 country_data_json = []
 for c in country:
@@ -9,8 +8,7 @@ for c in country:
         country_data = requests.get(url_county_name)
         country_data_json.append(country_data.json())
 
-
-#Print Global
+#Get global data
 url = 'https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats'
 headers = {
         "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
@@ -24,7 +22,7 @@ data_json = data.json()
 global_stats = [n for n in data_json['data']['covid19Stats']]
 global_cases = sum([c['confirmed'] for c in global_stats])
 global_deaths = sum([c['deaths'] for c in global_stats])
-global_death_rate = round((global_deaths/global_cases)*100, 2)
+global_fatality_rate = round((global_deaths/global_cases)*100, 2)
 
 #Print global
 print('\nGlobal number of cases: ')
@@ -32,7 +30,7 @@ print(str(f'{global_cases:,}'))
 print('\nGlobal number of deaths: ')
 print(str(f'{global_deaths:,}'))
 print('\nGlobal fatality rate: ')
-print(str(global_death_rate)+'%\n')
+print(str(global_fatality_rate)+'%\n')
 #print specific country
 def get_variable2(data_json, variable):
         return data_json[variable]
