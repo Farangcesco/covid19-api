@@ -30,6 +30,7 @@ global_recovered = latest_json['latest']['recovered']
 global_fatality_rate = global_deaths/global_confirmed*100
 r_global_fatality_rate = round(global_fatality_rate, 2)
 global_population = 7800000000
+r_global_population = 7.8
 global_p_of_pop_infected = global_confirmed/global_population*100
 r_global_p_of_pop_infected = round(global_p_of_pop_infected, 4)
 
@@ -51,16 +52,17 @@ r_p_of_pop_infected = round(p_of_pop_infected, 4)
 #print global
 print(f'\nLast updated on {date_str}\n')
 #print(f'Last updated on {date_str}\n')
-print('Global Stats\n')
+print('**Global Stats**\n')
 print(f'Confirmed cases: {f_number(global_confirmed)}')
 print(f'Deaths: {f_number(global_deaths)}')
 print(f'Recovered: {f_number(global_recovered)}')
 
 print(f'\nFatality rate: {f_number(r_global_fatality_rate)}%')
+print(f'Global population: {str(r_global_population)} Billions')
 print(f'Percentage of global population infected: {r_global_p_of_pop_infected}% ')
 
 #print country
-print(f'\nStats for {country}\n')
+print(f'\n\n**Stats for {country}**\n')
 
 print(f'Confirmed Cases: {f_number(confirmed)}')
 print(f'Deaths: {f_number(deaths)}')
