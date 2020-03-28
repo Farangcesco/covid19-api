@@ -1,10 +1,11 @@
+#!/usr/local/bin/python3
 import json
 import requests
 import dateutil.parser
 import datetime
 
 #get country to look up
-country = input(str('What country to look for? (ISO country code) ')).upper()
+country = input(str('What country to look for? (ISO country code (TH, CH etc.)) ')).upper()
 
 #methods
 def f_number(n):
