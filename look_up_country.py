@@ -49,9 +49,9 @@ p_of_pop_infected = confirmed/population*100
 r_p_of_pop_infected = round(p_of_pop_infected, 4)
 
 #print global
-print(f'\nGlobal stats, last updated on {date_str}\n')
+print(f'\nLast updated on {date_str}\n')
 #print(f'Last updated on {date_str}\n')
-
+print('Global Stats\n')
 print(f'Confirmed cases: {f_number(global_confirmed)}')
 print(f'Deaths: {f_number(global_deaths)}')
 print(f'Recovered: {f_number(global_recovered)}')
